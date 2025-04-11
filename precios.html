@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/index_style.css">
+    <link rel="stylesheet" href="css/precios_style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <title>Página de Precios</title>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">Hybrid Gym</div>
+        <div class="menu-toggle">☰</div>
+        <ul class="menu">
+            <li><a href="index.html">Inicio</a></li>
+            <li class="dropdown">
+                <a href="#">Clases</a>
+                <ul class="submenu">
+                    <li><a href="clases.html#musculacion">Musculación</a></li>
+                    <li><a href="clases.html#crossfit">CrossFit</a></li>
+                    <li><a href="clases.html#yoga">Yoga</a></li>
+                    <li><a href="clases.html#spinning">Spinning</a></li>
+                </ul>
+            </li>
+            <li><a href="entrenadores.html">Entrenadores</a></li>
+            <li><a href="precios.html">Precios</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+            <li><a href="blog.html">Blog</a></li>
+        </ul>
+        <button class="modo-oscuro-btn"><i class="fas fa-moon"></i></button>
+    </nav>
+    <header class="titulo-entrenadores">
+        <div class="container">
+            <h1>Plan de Hybrid Gym</h1>
+            <p>Encuentra el plan perfecto para alcanzar tus objetivos</p>
+        </div>
+    </header>
+    <main>
+        <!-- Toggle entre plan mensual y anual -->
+        <section class="toggle-plan">
+            <h2>Elige tu plan</h2>
+            <div class="plan-toggle-container">
+                <input type="checkbox" id="planToggle" class="plan-toggle">
+                <label for="planToggle" class="toggle-label">
+                    <span class="toggle-text toggle-text-left">Mensual</span>
+                    <span class="toggle-switch"></span>
+                    <span class="toggle-text toggle-text-right">Anual</span>
+                </label>
+            </div>
+        </section>
+
+        <!-- Tabla de precios con efecto de resaltado -->
+        <section class="tabla-precios">
+            <div class="precios-grid">
+                <!-- Plan Básico -->
+                <div class="precio-card">
+                    <div class="precio-header">
+                        <h3>Básico</h3>
+                        <div class="precio-destacado">
+                            <span class="precio-numero">$25000</span>
+                            <span class="periodo">/mes</span>
+                        </div>
+                    </div>
+                    <ul class="caracteristicas">
+                        <li>Acceso ilimitado al gimnasio</li>
+                        <li>Clases grupales incluidas</li>
+                        <li>Locker personal</li>
+                        <li>Acceso a todas las áreas</li>
+                    </ul>
+                    <button class="btn-seleccionar">Seleccionar</button>
+                </div>
+
+                <!-- Plan Estándar -->
+                <div class="precio-card">
+                    <div class="precio-header">
+                        <h3>Estándar</h3>
+                        <div class="precio-destacado">
+                            <span class="precio-numero">$35000</span>
+                            <span class="periodo">/mes</span>
+                        </div>
+                    </div>
+                    <ul class="caracteristicas">
+                        <li>Todas las características del Básico</li>
+                        <li>Entrenamiento personalizado</li>
+                        <li>Acceso a zonas VIP</li>
+                        <li>Descuento en suplementos</li>
+                    </ul>
+                    <button class="btn-seleccionar">Seleccionar</button>
+                </div>
+
+                <!-- Plan VIP -->
+                <div class="precio-card">
+                    <div class="precio-header">
+                        <h3>VIP</h3>
+                        <div class="precio-destacado">
+                            <span class="precio-numero">$52500</span>
+                            <span class="periodo">/mes</span>
+                        </div>
+                    </div>
+                    <ul class="caracteristicas">
+                        <li>Todas las características del Estándar</li>
+                        <li>Entrenador personal exclusivo</li>
+                        <li>Acceso 24/7</li>
+                        <li>Suplementos incluidos</li>
+                    </ul>
+                    <button class="btn-seleccionar">Seleccionar</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div class="footer-separator"></div>
+
+    <div style="height: 200px;"></div>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-content">
+            <!-- Newsletter -->
+            <div class="footer-box">
+                <h3>Suscribite</h3>
+                <p>Recibí tips, promos y novedades directamente en tu correo.</p>
+                <form class="suscripcion-form">
+                    <input type="email" placeholder="Tu correo electrónico" required>
+                    <button type="submit">Enviar</button>
+                </form>
+            </div>
+
+            <!-- Redes sociales -->
+            <div class="footer-box">
+                <h3>Seguinos</h3>
+                <div class="social-icons">
+                    <a href="#" class="social-link facebook">
+                        <img src="img/facebooklogo.png" alt="Facebook" class="social-icon">
+                    </a>
+                    <a href="#" class="social-link instagram">
+                        <img src="img/instagramlogo.jpg" alt="Instagram" class="social-icon">
+                    </a>
+                    <a href="#" class="social-link youtube">
+                        <img src="img/youtubelogo.png" alt="YouTube" class="social-icon">
+                    </a>
+                </div>
+            </div>
+
+            <!-- Mapa -->
+            <div class="footer-box">
+                <h3>Nos encontramos en</h3>
+                <div class="mapa">
+                    <iframe 
+                        src="https://www.openstreetmap.org/export/embed.html?bbox=-65.305%2C-24.185%2C-65.295%2C-24.175&layer=mapnik" 
+                        frameborder="0" 
+                        loading="lazy">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+
+        <!-- Créditos -->
+        <div class="footer-copyright">
+            <p>&copy; 2025 Hybrid Gym. Todos los derechos reservados.</p>
+            <p>Desarrollado con 💪 por Juan Garzón</p>
+        </div>
+    </footer>
+
+    <script>
+        // Toggle plan prices
+        document.getElementById('planToggle').addEventListener('change', function() {
+            const precios = document.querySelectorAll('.precio-numero');
+            const periodos = document.querySelectorAll('.periodo');
+            const isChecked = this.checked;
+            
+            precios.forEach(precio => {
+                let newPrice;
+                const currentPrice = parseInt(precio.textContent.replace('$', ''));
+                
+                if (isChecked) {
+                    // Convertir a anual multiplicando por 10
+                    newPrice = currentPrice * 10;
+                } else {
+                    // Convertir a mensual dividiendo por 10
+                    newPrice = currentPrice / 10;
+                }
+                
+                precio.textContent = `$${Math.round(newPrice)}`;
+            });
+
+            periodos.forEach(periodo => {
+                if (isChecked) {
+                    periodo.textContent = '/año';
+                } else {
+                    periodo.textContent = '/mes';
+                }
+            });
+        });
+    </script>
+    <script src="js/script.js" defer></script>
+</body>
+</html>

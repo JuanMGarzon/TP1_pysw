@@ -1,0 +1,1082 @@
+/* VARIABLES Y MODO OSCURO */
+:root {
+    --color-principal: #8B6B43;
+    --color-secundario: #222222;
+    --color-fondo: #222222;
+    --color-texto: #ffffff;
+    --color-hover: #a58150;
+    --espaciado: 20px;
+    --color-menu-fondo: linear-gradient(90deg, var(--color-principal), var(--color-secundario));
+    --color-menu-texto: #ffffff;
+    --transition: all 0.3s ease-in-out;
+    --shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    --border-radius: 8px;
+    --focus-outline: 3px solid #4d90fe;
+    --focus-ring: 0 0 0 3px #4d90fe;
+}
+
+body.dark-theme {
+    --color-fondo: #222222;
+    --color-texto: #ffffff;
+    --color-hover: #a58150;
+    --focus-outline-color: #4d90fe;
+}
+
+/* VARIABLES PARA MODO CLARO */
+body.light-theme {
+    --color-principal: #7d5f37;
+    --color-secundario: #ffffff;
+    --color-fondo: #ffffff;
+    --color-texto: #222222;
+    --color-hover: #8B6B43;
+    --focus-outline-color: #0066cc;
+}
+
+/* RESET Y TIPOGRAFÍA */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: var(--color-texto);
+    background-color: var(--color-fondo);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+/* ENHANCED NAVBAR STYLES */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--color-menu-fondo);
+    padding: 1rem 2rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar .logo {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.menu {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+    position: relative;
+    margin-left: auto;
+}
+
+.menu li {
+    position: relative;
+}
+
+.menu li a {
+    color: var(--color-menu-texto);
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: color 0.3s, transform 0.3s;
+    display: block;
+    padding: 0.5rem 1rem;
+}
+
+.menu li a:hover {
+    color: var(--color-hover);
+    transform: scale(1.1);
+}
+
+.submenu {
+    display: none;
+    position: absolute;
+    left: 0;
+    top: 100%;
+    background-color: var(--color-fondo);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 10px;
+    z-index: 1000;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.dropdown:hover .submenu {
+    display: block;
+}
+
+.submenu li {
+    padding: 5px 0;
+}
+
+.submenu li a {
+    color: var(--color-menu-texto);
+    text-decoration: none;
+    padding-left: 10px;
+    display: block;
+}
+
+.submenu li a:hover {
+    background-color: var(--color-hover);
+    color: #fff;
+}
+
+body.light-theme .submenu li a {
+    color: var(--color-texto);
+}
+
+body.light-theme .submenu li a:hover {
+    background-color: var(--color-hover);
+    color: var(--color-secundario);
+}
+
+/* BOTÓN DE MODO OSCURO/CLARO */
+.modo-oscuro-btn {
+    background-color: var(--color-principal);
+    color: var(--color-texto);
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+    margin-left: 10px;
+    position: relative;
+    z-index: 1000;
+    padding: 0;
+}
+
+.modo-oscuro-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+body.dark-theme .modo-oscuro-btn {
+    background-color: var(--color-texto);
+    color: var(--color-principal);
+}
+
+body.light-theme .modo-oscuro-btn {
+    background-color: var(--color-principal);
+    color: var(--color-texto);
+}
+
+/* TÍTULO DE CLASES */
+.titulo-clases {
+    padding: 8rem 2rem 4rem; /* Aumentado el padding-top para dejar espacio a la navbar fija */
+    background: var(--color-fondo);
+    position: relative;
+    overflow: hidden;
+}
+
+.titulo-clases::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(160, 122, 68, 0.1), rgba(160, 122, 68, 0.05));
+    z-index: 1;
+}
+
+.titulo-clases .container {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.titulo-clases h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    color: var(--color-principal);
+    position: relative;
+    display: inline-block;
+}
+
+.titulo-clases h1::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: var(--color-principal);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.5s ease;
+}
+
+.titulo-clases h1:hover::after {
+    transform: scaleX(1);
+}
+
+.titulo-clases p {
+    font-size: 1.1rem;
+    font-weight: 400;
+    color: var(--color-texto);
+    opacity: 0.9;
+    line-height: 1.6;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Galería de Clases */
+.galeria-clases {
+    padding: 4rem 2rem;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.galeria-clases h2 {
+    text-align: center;
+    color: var(--color-principal);
+    margin-bottom: 30px;
+    font-size: 2.5rem;
+}
+
+.horarios-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    padding: 0 1rem;
+}
+
+.clase-wrapper {
+    position: relative;
+    overflow: hidden;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background: var(--color-fondo);
+    cursor: pointer;
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.clase-wrapper:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.clase-item {
+    position: relative;
+    cursor: pointer;
+}
+
+.clase-imagen {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.clase-wrapper:hover .clase-imagen {
+    transform: scale(1.05);
+}
+
+.clase-info {
+    padding: 20px;
+    background-color: var(--color-principal);
+    color: white;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+
+.clase-info h3 {
+    margin: 0;
+    font-size: 1.5rem;
+}
+
+.clase-descripcion-container {
+    padding: 20px;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+    max-height: 0;
+}
+
+.clase-descripcion {
+    background-color: var(--color-fondo);
+    color: var(--color-texto);
+}
+
+.clase-descripcion p {
+    margin-bottom: 15px;
+}
+
+.clase-descripcion ul {
+    list-style-type: disc;
+    padding-left: 20px;
+    margin-bottom: 15px;
+}
+
+.clase-descripcion ul li {
+    margin-bottom: 5px;
+}
+
+/* TABLA DE HORARIOS - RESPONSIVE */
+.horarios-grid {
+    margin-top: 50px;
+    padding: 0 15px;
+}
+
+.horarios-titulo {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.horarios-titulo h2 {
+    font-size: 2rem;
+    color: var(--color-principal);
+    position: relative;
+    display: inline-block;
+}
+
+.horarios-tabla {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    overflow-x: auto;
+    display: block;
+    max-width: 100%;
+    margin-bottom: 30px;
+}
+
+.horarios-header {
+    display: flex;
+    background-color: var(--color-principal);
+    color: white;
+}
+
+.clase-header {
+    flex: 0 0 150px;
+    padding: 15px;
+    font-weight: bold;
+    text-align: left;
+    border-right: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.dia-header {
+    flex: 1;
+    padding: 15px;
+    font-weight: bold;
+    text-align: center;
+    border-right: 1px solid rgba(255, 255, 255, 0.2);
+    min-width: 100px;
+}
+
+.horarios-body {
+    display: flex;
+    flex-direction: column;
+}
+
+.horarios-fila {
+    display: flex;
+    border-bottom: 1px solid rgba(160, 122, 68, 0.2);
+}
+
+.clase-cell {
+    flex: 0 0 150px;
+    padding: 15px;
+    font-weight: bold;
+    border-right: 1px solid rgba(160, 122, 68, 0.2);
+    background-color: rgba(160, 122, 68, 0.1);
+    display: flex;
+    align-items: center;
+}
+
+.dia-cell {
+    flex: 1;
+    padding: 15px;
+    text-align: center;
+    border-right: 1px solid rgba(160, 122, 68, 0.2);
+    min-width: 100px;
+}
+
+/* MEDIA QUERIES PARA RESPONSIVIDAD */
+@media (max-width: 1200px) {
+    .horarios-container {
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    }
+}
+
+@media (max-width: 992px) {
+    .filtros {
+        gap: 10px;
+    }
+    
+    .filtro-btn {
+        min-width: 100px;
+        padding: 8px 15px;
+        font-size: 0.9rem;
+    }
+    
+    .horarios-tabla {
+        font-size: 0.9rem;
+    }
+    
+    .clase-header, .clase-cell {
+        flex: 0 0 120px;
+    }
+    
+    .dia-header, .dia-cell {
+        min-width: 90px;
+        padding: 12px 8px;
+    }
+}
+
+@media (max-width: 768px) {
+    .filtros {
+        flex-direction: row;
+        overflow-x: auto;
+        padding-bottom: 10px;
+        justify-content: flex-start;
+        -webkit-overflow-scrolling: touch;
+        scroll-snap-type: x mandatory;
+    }
+    
+    .filtro-btn {
+        min-width: 90px;
+        flex: 0 0 auto;
+        scroll-snap-align: start;
+        padding: 8px 12px;
+        font-size: 0.9rem;
+    }
+    
+    .horarios-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .clase-wrapper {
+        max-width: 100%;
+    }
+    
+    .clase-imagen {
+        height: 180px;
+    }
+    
+    .clase-info h3 {
+        font-size: 1.3rem;
+    }
+    
+    /* Tabla de horarios responsive para móvil */
+    .horarios-tabla {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+        border: 1px solid rgba(160, 122, 68, 0.2);
+        border-radius: var(--border-radius);
+    }
+    
+    .horarios-header, .horarios-fila {
+        min-width: 700px;
+    }
+    
+    .clase-item::after {
+        content: '+';
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        width: 25px;
+        height: 25px;
+        background-color: var(--color-principal);
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        font-size: 1.2rem;
+        z-index: 2;
+    }
+    
+    /* Ocultar indicador de scroll al llegar al final */
+    .horarios-lista.scrolled-end::after {
+        display: none;
+    }
+
+    .menu {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: var(--color-fondo);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        z-index: 1000;
+    }
+
+    .menu.active {
+        display: flex;
+        z-index: 1001;
+    }
+
+    .menu li {
+        width: 100%;
+    }
+
+    .menu li a {
+        padding: 0.75rem;
+        font-size: 0.9rem;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .menu-toggle {
+        display: block;
+        cursor: pointer;
+        z-index: 1002;
+    }
+}
+
+@media (max-width: 576px) {
+    .horarios-container {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .filtro-btn {
+        min-width: 80px;
+        padding: 7px 10px;
+        font-size: 0.85rem;
+    }
+    
+    .clase-imagen {
+        height: 200px;
+    }
+    
+    .clase-descripcion p, .clase-descripcion ul {
+        font-size: 0.9rem;
+    }
+    
+    .horarios-titulo h2 {
+        font-size: 1.6rem;
+    }
+    
+    /* Mejora para tablas en móviles muy pequeños */
+    .clase-header, .clase-cell {
+        flex: 0 0 100px;
+    }
+    
+    .dia-header, .dia-cell {
+        min-width: 80px;
+        padding: 10px 5px;
+        font-size: 0.8rem;
+    }
+}
+
+/* Añadir indicador visual para scroll horizontal en móvil */
+@media (max-width: 768px) {
+    .horarios-lista {
+        position: relative;
+    }
+    
+    .horarios-lista::after {
+        content: '→';
+        position: absolute;
+        right: 10px;
+        top: 50%;
+        transform: translateY(-50%);
+        background-color: var(--color-principal);
+        color: white;
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        animation: pulse 2s infinite;
+        pointer-events: none;
+    }
+    
+    @keyframes pulse {
+        0% {
+            opacity: 1;
+        }
+        50% {
+            opacity: 0.5;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
+}
+
+/* Filtros */
+.filtros {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-bottom: 30px;
+    padding: 0 10px;
+}
+
+.filtro-btn {
+    background-color: var(--color-fondo);
+    color: var(--color-texto);
+    border: 2px solid var(--color-principal);
+    padding: 10px 20px;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    font-weight: bold;
+    transition: var(--transition);
+    min-width: 120px;
+    text-align: center;
+}
+
+.filtro-btn:hover {
+    background-color: var(--color-principal);
+    color: #fff;
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.filtro-btn.active {
+    background-color: var(--color-principal);
+    color: #fff;
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive design */
+@media (max-width: 1200px) {
+    .clases-grid {
+        gap: 20px;
+    }
+    .clase-wrapper {
+        width: calc(33.333% - 20px); /* Ajuste para 3 columnas */
+    }
+}
+
+@media (max-width: 992px) {
+    .clase-wrapper {
+        width: calc(50% - 15px); /* Ajuste para 2 columnas */
+    }
+    .clase-info h3 {
+        font-size: 2rem;
+    }
+    .clase-info p {
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .clase-wrapper {
+        width: 100%; /* 1 columna */
+        max-width: 350px; /* Ancho máximo para la única columna */
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .clase-wrapper .clase-card {
+        height: 300px; /* Altura para la única columna */
+    }
+}
+
+/* FOOTER */
+.footer {
+    background: var(--color-principal);
+    padding: 1.5rem 0.5rem 0.5rem;
+    margin-top: 2rem;
+    color: var(--color-texto);
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-box {
+    text-align: center;
+    padding: 0.3rem;
+}
+
+.footer-box h3 {
+    color: var(--color-texto);
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+}
+
+.footer-box p {
+    color: var(--color-texto);
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+}
+
+/* ICONOS SOCIALES */
+.social-icons {
+    display: flex;
+    gap: 0.5rem;
+    justify-content: center;
+    margin-top: 0.3rem;
+}
+
+.social-link {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.social-icon {
+    width: 18px;
+    height: 18px;
+    object-fit: contain;
+}
+
+/* MAPA */
+.mapa {
+    height: 200px;
+    margin: 0.3rem auto;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+}
+
+.mapa iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+/* COPYRIGHT */
+.footer-copyright {
+    text-align: center;
+    padding: 0.3rem 0;
+    background: rgba(0, 0, 0, 0.1);
+    color: var(--color-texto);
+    font-size: 0.65rem;
+    margin-top: 1rem;
+}
+
+/* Galería de imágenes */
+.galeria-imagenes {
+    padding: 2rem;
+    background: var(--color-fondo);
+}
+
+.galeria-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(3, 150px);
+    gap: 10px;
+}
+
+.galeria-item:nth-child(1) {
+    grid-column: 1 / 2;
+    grid-row: 1 / 3;
+}
+
+.galeria-item:nth-child(2) {
+    grid-column: 1 / 2;
+    grid-row: 3 / 4;
+}
+
+.galeria-item:nth-child(3) {
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+}
+
+.galeria-item:nth-child(4) {
+    grid-column: 2 / 3;
+    grid-row: 2 / 4;
+}
+
+.galeria-item:nth-child(5) {
+    grid-column: 3 / 4;
+    grid-row: 1 / 3;
+}
+
+.galeria-item:nth-child(6) {
+    grid-column: 4 / 5;
+    grid-row: 1 / 2;
+}
+
+.galeria-item:nth-child(7) {
+    grid-column: 3 / 4;
+    grid-row: 3 / 4;
+}
+
+.galeria-item:nth-child(8) {
+    grid-column: 4 / 5;
+    grid-row: 2 / 3;
+}
+
+.galeria-item:nth-child(9) {
+    grid-column: 4 / 5;
+    grid-row: 3 / 4;
+}
+
+.galeria-item {
+    border-radius: 8px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.galeria-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.1), rgba(0,0,0,0.5));
+    z-index: 1;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.galeria-item:hover {
+    transform: scale(1.02);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.galeria-item:hover::before {
+    opacity: 1;
+}
+
+/* Responsive para la galería */
+@media (max-width: 992px) {
+    .galeria-container {
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(4, 120px);
+    }
+    
+    .galeria-item:nth-child(1) {
+        grid-column: 1 / 2;
+        grid-row: 1 / 3;
+    }
+    
+    .galeria-item:nth-child(2) {
+        grid-column: 1 / 2;
+        grid-row: 3 / 4;
+    }
+    
+    .galeria-item:nth-child(3) {
+        grid-column: 2 / 3;
+        grid-row: 1 / 2;
+    }
+    
+    .galeria-item:nth-child(4) {
+        grid-column: 2 / 3;
+        grid-row: 2 / 4;
+    }
+    
+    .galeria-item:nth-child(5) {
+        grid-column: 3 / 4;
+        grid-row: 1 / 3;
+    }
+    
+    .galeria-item:nth-child(6) {
+        grid-column: 3 / 4;
+        grid-row: 3 / 4;
+    }
+    
+    .galeria-item:nth-child(7) {
+        grid-column: 1 / 2;
+        grid-row: 4 / 5;
+    }
+    
+    .galeria-item:nth-child(8) {
+        grid-column: 2 / 3;
+        grid-row: 4 / 5;
+    }
+    
+    .galeria-item:nth-child(9) {
+        grid-column: 3 / 4;
+        grid-row: 4 / 5;
+    }
+}
+
+@media (max-width: 768px) {
+    .galeria-container {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(5, 100px);
+    }
+    
+    .galeria-item:nth-child(1) {
+        grid-column: 1 / 2;
+        grid-row: 1 / 2;
+    }
+    
+    .galeria-item:nth-child(2) {
+        grid-column: 2 / 3;
+        grid-row: 1 / 2;
+    }
+    
+    .galeria-item:nth-child(3) {
+        grid-column: 1 / 3;
+        grid-row: 2 / 3;
+    }
+    
+    .galeria-item:nth-child(4) {
+        grid-column: 1 / 2;
+        grid-row: 3 / 4;
+    }
+    
+    .galeria-item:nth-child(5) {
+        grid-column: 2 / 3;
+        grid-row: 3 / 4;
+    }
+    
+    .galeria-item:nth-child(6) {
+        grid-column: 1 / 3;
+        grid-row: 4 / 5;
+    }
+    
+    .galeria-item:nth-child(7) {
+        grid-column: 1 / 2;
+        grid-row: 5 / 6;
+    }
+    
+    .galeria-item:nth-child(8) {
+        grid-column: 2 / 3;
+        grid-row: 5 / 6;
+    }
+    
+    .galeria-item:nth-child(9) {
+        display: none;
+    }
+}
+
+@media (max-width: 480px) {
+    .galeria-container {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(6, 80px);
+    }
+    
+    .galeria-item:nth-child(1) {
+        grid-column: 1 / 2;
+        grid-row: 1 / 2;
+    }
+    
+    .galeria-item:nth-child(2) {
+        grid-column: 1 / 2;
+        grid-row: 2 / 3;
+    }
+    
+    .galeria-item:nth-child(3) {
+        grid-column: 1 / 2;
+        grid-row: 3 / 4;
+    }
+    
+    .galeria-item:nth-child(4) {
+        grid-column: 1 / 2;
+        grid-row: 4 / 5;
+    }
+    
+    .galeria-item:nth-child(5) {
+        grid-column: 1 / 2;
+        grid-row: 5 / 6;
+    }
+    
+    .galeria-item:nth-child(6) {
+        grid-column: 1 / 2;
+        grid-row: 6 / 7;
+    }
+    
+    .galeria-item:nth-child(7),
+    .galeria-item:nth-child(8),
+    .galeria-item:nth-child(9) {
+        display: none;
+    }
+}
+
+/* Estilos de accesibilidad global */
+a:focus,
+button:focus,
+input:focus,
+select:focus,
+textarea:focus {
+    outline: var(--focus-outline);
+    outline-offset: 2px;
+    box-shadow: var(--focus-ring);
+    transition: outline-offset 0.2s ease;
+}
+
+a:focus:not(:focus-visible),
+button:focus:not(:focus-visible),
+input:focus:not(:focus-visible),
+select:focus:not(:focus-visible),
+textarea:focus:not(:focus-visible) {
+    outline: none;
+    box-shadow: none;
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+    outline: var(--focus-outline);
+    outline-offset: 2px;
+    box-shadow: var(--focus-ring);
+}
+
+.skip-link {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background: var(--color-principal);
+    color: #fff;
+    padding: 8px;
+    z-index: 9999;
+    transition: top 0.3s;
+}
+
+.skip-link:focus {
+    top: 0;
+}
+
+/* BOTÓN DE MODO OSCURO/CLARO */
+.modo-oscuro-btn:focus {
+    outline: var(--focus-outline);
+    outline-offset: 2px;
+}
+
+/* Ajustar el display de descripciones para que se vean en desktop por defecto */
+@media (min-width: 769px) {
+    .clase-descripcion-container {
+        max-height: none;
+    }
+}
+
+@media (max-width: 480px) {
+    .galeria-clases {
+        padding: 1.5rem 0.5rem;
+    }
+    .clase-wrapper {
+        max-width: 100%;
+    }
+}

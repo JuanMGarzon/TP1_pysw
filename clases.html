@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clases - Hybrid Gym</title>
+    <link rel="stylesheet" href="css/clases_style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+
+<body>
+    <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
+
+    <!-- Navegación -->
+    <header>
+        <nav class="navbar" role="navigation" aria-label="Menú principal">
+            <div class="logo">Hybrid Gym</div>
+            <div class="menu-toggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="main-menu">☰</div>
+            <ul class="menu" id="main-menu">
+                <li><a href="index.html" aria-current="page">Inicio</a></li>
+                <li class="dropdown">
+                    <a href="#" aria-haspopup="true" aria-expanded="false">Clases</a>
+                    <ul class="submenu">
+                        <li><a href="clases.html#musculacion">Musculación</a></li>
+                        <li><a href="clases.html#crossfit">CrossFit</a></li>
+                        <li><a href="clases.html#yoga">Yoga</a></li>
+                        <li><a href="clases.html#spinning">Spinning</a></li>
+                    </ul>
+                </li>
+                <li><a href="entrenadores.html">Entrenadores</a></li>
+                <li><a href="precios.html">Precios</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><button class="modo-oscuro-btn" aria-label="Cambiar entre modo oscuro y claro"><i class="fas fa-moon"></i></button></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="main-content">
+        <!-- Título de Clases -->
+        <section class="titulo-clases">
+            <div class="container">
+                <h1>Descubre nuestras clases</h1>
+                <p>Encuentra la clase perfecta para alcanzar tus objetivos</p>
+            </div>
+        </section>
+
+        <!-- Galería de imágenes -->
+        <section class="galeria-imagenes" aria-label="Galería de actividades">
+            <div class="galeria-container">
+                <div class="galeria-item">
+                    <img src="img/galerias/musculacion.jpg" alt="Sesión de entrenamiento de musculación con pesas"
+                        style="width:100%; height:100%; object-fit:cover;">
+                </div>
+                <div class="galeria-item">
+                    <img src="img/galerias/crossfit.jpg" alt="Clase grupal de CrossFit con ejercicios funcionales"
+                        style="width:100%; height:100%; object-fit:cover;">
+                </div>
+                <div class="galeria-item">
+                    <img src="img/galerias/yoga.jpg" alt="Práctica de yoga en postura de meditación"
+                        style="width:100%; height:100%; object-fit:cover;">
+                </div>
+                <div class="galeria-item">
+                    <img src="img/galerias/spinning.jpg" alt="Clase de spinning con instructor y participantes"
+                        style="width:100%; height:100%; object-fit:cover;">
+                </div>
+                <div class="galeria-item">
+                    <img src="img/galerias/funcional.jpg" alt="Entrenamiento funcional con ejercicios variados"
+                        style="width:100%; height:100%; object-fit:cover;">
+                </div>
+                <div class="galeria-item">
+                    <img src="img/galerias/boxeo.jpg" alt="Entrenamiento de boxeo con sacos de golpeo"
+                        style="width:100%; height:100%; object-fit:cover;">
+                </div>
+                <div class="galeria-item">
+                    <img src="img/galerias/pilates.jpg" alt="Sesión de pilates con ejercicios de control corporal"
+                        style="width:100%; height:100%; object-fit:cover;">
+                </div>
+                <div class="galeria-item">
+                    <img src="img/galerias/zumba.jpg" alt="Clase de zumba con baile y movimientos rítmicos"
+                        style="width:100%; height:100%; object-fit:cover;">
+                </div>
+                <div class="galeria-item">
+                    <img src="img/galerias/stretching.jpg" alt="Ejercicios de estiramiento y flexibilidad"
+                        style="width:100%; height:100%; object-fit:cover;">
+                </div>
+            </div>
+        </section>
+
+        <!-- Galería de Clases -->
+        <section class="galeria-clases" aria-labelledby="nuestras-clases-titulo">
+            <h2 id="nuestras-clases-titulo">Nuestras Clases</h2>
+            <div class="filtros" role="tablist" aria-label="Filtros de clases">
+                <button class="filtro-btn active" data-filtro="todos" role="tab" aria-selected="true"
+                    aria-controls="todos-panel">Todos</button>
+                <button class="filtro-btn" data-filtro="Musculación" role="tab" aria-selected="false"
+                    aria-controls="musculacion-panel">Musculación</button>
+                <button class="filtro-btn" data-filtro="CrossFit" role="tab" aria-selected="false"
+                    aria-controls="crossfit-panel">CrossFit</button>
+                <button class="filtro-btn" data-filtro="Yoga" role="tab" aria-selected="false"
+                    aria-controls="yoga-panel">Yoga</button>
+                <button class="filtro-btn" data-filtro="Spinning" role="tab" aria-selected="false"
+                    aria-controls="spinning-panel">Spinning</button>
+            </div>
+
+            <!-- Sección de Horarios -->
+            <div class="horarios-container">
+                <!-- Horarios Musculación -->
+                <div class="clase-wrapper" data-clase="Musculación" id="musculacion-panel" role="tabpanel"
+                    aria-labelledby="tab-musculacion">
+                    <div class="clase-item">
+                        <img src="img/clases/musculacion.jpg"
+                            alt="Área de entrenamiento de musculación con equipamiento" class="clase-imagen">
+                        <div class="clase-info">
+                            <h3 id="tab-musculacion">Musculación</h3>
+                        </div>
+                    </div>
+                    <div class="clase-descripcion-container">
+                        <div class="clase-descripcion">
+                            <p>Entrenamiento de fuerza completo que trabaja todos los grupos musculares.</p>
+                            <p>Beneficios:</p>
+                            <ul>
+                                <li>Aumento de la masa muscular</li>
+                                <li>Mejora de la fuerza y resistencia</li>
+                                <li>Quema de calorías</li>
+                                <li>Mejor postura corporal</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Horarios CrossFit -->
+                <div class="clase-wrapper" data-clase="CrossFit" id="crossfit-panel" role="tabpanel"
+                    aria-labelledby="tab-crossfit">
+                    <div class="clase-item">
+                        <img src="img/clases/crossfit.jpg"
+                            alt="Entrenamiento de CrossFit con ejercicios de alta intensidad" class="clase-imagen">
+                        <div class="clase-info">
+                            <h3 id="tab-crossfit">CrossFit</h3>
+                        </div>
+                    </div>
+                    <div class="clase-descripcion-container">
+                        <div class="clase-descripcion">
+                            <p>Entrenamiento funcional de alta intensidad que combina fuerza, resistencia y movimientos
+                                compuestos.</p>
+                            <p>Beneficios:</p>
+                            <ul>
+                                <li>Mejora de la condición física general</li>
+                                <li>Quema de grasa rápida</li>
+                                <li>Mejora de la fuerza y resistencia</li>
+                                <li>Entrenamiento en grupo motivador</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Horarios Yoga -->
+                <div class="clase-wrapper" data-clase="Yoga" id="yoga-panel" role="tabpanel" aria-labelledby="tab-yoga">
+                    <div class="clase-item">
+                        <img src="img/clases/yoga.jpg" alt="Clase de yoga con instructor y estudiantes en posturas"
+                            class="clase-imagen">
+                        <div class="clase-info">
+                            <h3 id="tab-yoga">Yoga</h3>
+                        </div>
+                    </div>
+                    <div class="clase-descripcion-container">
+                        <div class="clase-descripcion">
+                            <p>Práctica que combina posturas, respiración y meditación para equilibrar cuerpo y mente.
+                            </p>
+                            <p>Beneficios:</p>
+                            <ul>
+                                <li>Reducción del estrés</li>
+                                <li>Mejora de la flexibilidad</li>
+                                <li>Fortalecimiento muscular</li>
+                                <li>Mejor equilibrio y concentración</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Horarios Spinning -->
+                <div class="clase-wrapper" data-clase="Spinning" id="spinning-panel" role="tabpanel"
+                    aria-labelledby="tab-spinning">
+                    <div class="clase-item">
+                        <img src="img/clases/spinning.jpg" alt="Clase de spinning con bicicletas estáticas"
+                            class="clase-imagen">
+                        <div class="clase-info">
+                            <h3 id="tab-spinning">Spinning</h3>
+                        </div>
+                    </div>
+                    <div class="clase-descripcion-container">
+                        <div class="clase-descripcion">
+                            <p>Entrenamiento cardiovascular en bicicleta estacionaria con música motivadora.</p>
+                            <p>Beneficios:</p>
+                            <ul>
+                                <li>Quema de calorías efectiva</li>
+                                <li>Mejora de la resistencia cardiovascular</li>
+                                <li>Fortalecimiento de piernas y glúteos</li>
+                                <li>Entrenamiento de alto impacto</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sección de Horarios -->
+            <div class="horarios-grid">
+                <div class="horarios-titulo">
+                    <h2 id="horarios-titulo">Horarios disponibles</h2>
+                </div>
+                <div class="horarios-lista" aria-labelledby="horarios-titulo">
+                    <!-- Tabla de Horarios -->
+                    <div class="horarios-tabla" role="table" aria-label="Horarios de clases">
+                        <div class="horarios-header" role="rowgroup">
+                            <div class="clase-header" role="columnheader">Clase</div>
+                            <div class="dia-header" role="columnheader">Lunes</div>
+                            <div class="dia-header" role="columnheader">Martes</div>
+                            <div class="dia-header" role="columnheader">Miércoles</div>
+                            <div class="dia-header" role="columnheader">Jueves</div>
+                            <div class="dia-header" role="columnheader">Viernes</div>
+                            <div class="dia-header" role="columnheader">Sábado</div>
+                            <div class="dia-header" role="columnheader">Domingo</div>
+                        </div>
+                        <div class="horarios-body" role="rowgroup">
+                            <!-- Musculación -->
+                            <div class="horarios-fila" role="row">
+                                <div class="clase-cell" role="cell">Musculación</div>
+                                <div class="dia-cell" role="cell">10:00 - 11:30<br>18:00 - 19:30</div>
+                                <div class="dia-cell" role="cell">-</div>
+                                <div class="dia-cell" role="cell">10:00 - 11:30<br>18:00 - 19:30</div>
+                                <div class="dia-cell" role="cell">10:00 - 11:30<br>18:00 - 19:30</div>
+                                <div class="dia-cell" role="cell">10:00 - 11:30<br>18:00 - 19:30</div>
+                                <div class="dia-cell" role="cell">-</div>
+                                <div class="dia-cell" role="cell">-</div>
+                            </div>
+                            <!-- CrossFit -->
+                            <div class="horarios-fila" role="row">
+                                <div class="clase-cell" role="cell">CrossFit</div>
+                                <div class="dia-cell" role="cell">-</div>
+                                <div class="dia-cell" role="cell">11:00 - 12:30<br>19:00 - 20:30</div>
+                                <div class="dia-cell" role="cell">-</div>
+                                <div class="dia-cell" role="cell">11:00 - 12:30<br>19:00 - 20:30</div>
+                                <div class="dia-cell" role="cell">-</div>
+                                <div class="dia-cell" role="cell">09:00 - 10:30</div>
+                                <div class="dia-cell" role="cell">-</div>
+                            </div>
+                            <!-- Yoga -->
+                            <div class="horarios-fila" role="row">
+                                <div class="clase-cell" role="cell">Yoga</div>
+                                <div class="dia-cell" role="cell">-</div>
+                                <div class="dia-cell" role="cell">16:00 - 17:30</div>
+                                <div class="dia-cell" role="cell">-</div>
+                                <div class="dia-cell" role="cell">16:00 - 17:30</div>
+                                <div class="dia-cell" role="cell">-</div>
+                                <div class="dia-cell" role="cell">-</div>
+                                <div class="dia-cell" role="cell">09:00 - 10:30</div>
+                            </div>
+                            <!-- Spinning -->
+                            <div class="horarios-fila" role="row">
+                                <div class="clase-cell" role="cell">Spinning</div>
+                                <div class="dia-cell" role="cell">17:00 - 18:00</div>
+                                <div class="dia-cell" role="cell">-</div>
+                                <div class="dia-cell" role="cell">17:00 - 18:00</div>
+                                <div class="dia-cell" role="cell">-</div>
+                                <div class="dia-cell" role="cell">17:00 - 18:00</div>
+                                <div class="dia-cell" role="cell">-</div>
+                                <div class="dia-cell" role="cell">-</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer" role="contentinfo">
+        <div class="footer-content">
+            <div class="footer-box">
+                <h3>Redes Sociales</h3>
+                <p>Síguenos en nuestras redes sociales para estar al día con las últimas novedades.</p>
+                <div class="social-icons">
+                    <a href="#" class="social-link facebook" aria-label="Facebook">
+                        <img src="img/facebooklogo.png" alt="Logo de Facebook" class="social-icon">
+                    </a>
+                    <a href="#" class="social-link instagram" aria-label="Instagram">
+                        <img src="img/instagramlogo.jpg" alt="Logo de Instagram" class="social-icon">
+                    </a>
+                    <a href="#" class="social-link twitter" aria-label="YouTube">
+                        <img src="img/youtubelogo.png" alt="Logo de YouTube" class="social-icon">
+                    </a>
+                </div>
+            </div>
+            <div class="footer-box">
+                <h3>Suscríbete</h3>
+                <p>Recibe nuestras novedades y ofertas especiales.</p>
+                <form class="suscripcion-form" aria-label="Formulario de suscripción">
+                    <input type="email" placeholder="Tu correo electrónico" required aria-label="Correo electrónico">
+                    <button type="submit">Suscribirse</button>
+                </form>
+            </div>
+            <div class="footer-box">
+                <h3>Ubicación</h3>
+                <p>Visítanos en nuestro gimnasio.</p>
+                <div class="mapa">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3902.806145026034!2d-58.3816!3d-34.6037!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x93e7b3b3b3b3b3b3%3A0x123456789abcdef0!2sGymFit!5e0!3m2!1ses!2sbo!4v1681185227000!5m2!1ses!2sbo"
+                        width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade" title="Mapa de ubicación de Hybrid Gym"
+                        aria-label="Mapa de ubicación de nuestro gimnasio">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+        <div class="footer-copyright">
+            <p>&copy; 2025 GymFit. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/script.js"></script>
+    <script src="js/clases.js"></script>
+</body>
+
+</html>

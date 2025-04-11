@@ -1,0 +1,1083 @@
+/* ENTRENADORES PAGE STYLES */
+:root {
+    --color-principal: #a07a44;
+    --color-secundario: #2c2c2c;
+    --color-fondo: #ffffff;
+    --color-texto: #2c2c2c;
+    --color-hover: #c19a6b;
+    --color-estrellas: #ffd700;
+    --color-barra: #2c2c2c;
+    --color-progreso: #ffd700;
+    --border-radius: 5px;
+}
+
+body.dark-theme {
+    --color-fondo: #2c2c2c;
+    --color-texto: #ffffff;
+    --color-secundario: #000000;
+    --color-barra: #000000;
+}
+
+body.light-theme .modo-oscuro-btn {
+    background-color: var(--color-principal);
+    color: var(--color-texto);
+}
+
+body.dark-theme .modo-oscuro-btn {
+    background-color: var(--color-texto);
+    color: var(--color-principal);
+}
+
+/* TÍTULO DE ENTRENADORES */
+.titulo-entrenadores {
+    padding: 4rem 2rem;
+    background: var(--color-fondo);
+    text-align: center;
+}
+
+.titulo-entrenadores h1 {
+    font-size: 3.5rem;
+    color: var(--color-principal);
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-weight: 700;
+    position: relative;
+    display: inline-block;
+}
+
+.titulo-entrenadores h1::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: var(--color-principal);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.5s ease;
+}
+
+.titulo-entrenadores h1:hover::after {
+    transform: scaleX(1);
+}
+
+.titulo-entrenadores p {
+    font-size: 1.2rem;
+    color: var(--color-texto);
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.6;
+    padding: 0 1rem;
+}
+
+/* SECCIÓN DE ENTRENADORES */
+.entrenadores {
+    padding: 4rem 2rem;
+    background: var(--color-fondo);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.descripcion-entrenadores {
+    padding: 4rem 2rem;
+    background: var(--color-fondo);
+}
+
+.descripcion-entrenadores h2 {
+    font-size: 2rem;
+    color: var(--color-principal);
+    margin-bottom: 2rem;
+    text-align: center;
+    font-weight: 700;
+}
+
+.descripcion-entrenadores p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: var(--color-texto);
+    margin-bottom: 1.5rem;
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.caracteristicas {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin: 2rem auto;
+    max-width: 800px;
+}
+
+.caracteristica {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.caracteristica:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateX(5px);
+}
+
+.tilde {
+    color: #FFA500;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.texto {
+    flex: 1;
+    font-size: 1.1rem;
+    line-height: 1.4;
+    color: var(--color-texto);
+    font-weight: 400;
+}
+
+/* CONTENEDOR DE TARJETAS */
+.tarjetas-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+/* TARJETA FLIP */
+.tarjeta-flip {
+    perspective: 1000px;
+    width: 300px;
+    height: 400px;
+    margin: 0 auto;
+}
+
+.tarjeta {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: transform 0.6s;
+    cursor: pointer;
+    background: var(--color-fondo);
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.tarjeta-flip:hover .tarjeta {
+    transform: rotateY(180deg);
+}
+
+/* CARAS DE LA TARJETA */
+.cara {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.cara.frontal {
+    background: var(--color-fondo);
+}
+
+.cara.frontal img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.cara.trasera {
+    background: var(--color-fondo);
+    transform: rotateY(180deg);
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+/* CONTENIDO DE LA TARJETA TRASERA */
+.cara.trasera h3 {
+    font-size: 1.2rem;
+    color: var(--color-principal);
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+.cara.trasera p {
+    font-size: 0.9rem;
+    color: var(--color-texto);
+    margin-bottom: 1rem;
+}
+
+/* BARRAS DE HABILIDADES */
+.skill-bars {
+    width: 100%;
+    margin: 1rem 0;
+}
+
+.etiqueta {
+    font-size: 0.8rem;
+    color: var(--color-texto);
+    margin-bottom: 0.25rem;
+}
+
+.skill-bar {
+    width: 100%;
+    height: 6px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 3px;
+    margin-bottom: 0.5rem;
+}
+
+.fill {
+    height: 100%;
+    background: var(--color-principal);
+    border-radius: 3px;
+    transition: width 0.6s;
+}
+
+/* RESEÑAS */
+.star-rating {
+    margin-top: 1rem;
+}
+
+.star {
+    color: #FFA500;
+    font-size: 1.2rem;
+    margin: 0 0.2rem;
+}
+
+/* TARJETAS DE ENTRENADORES */
+.tarjeta-flip {
+    perspective: 1000px;
+    flex: 1;
+    min-width: 250px;
+    max-width: 300px;
+}
+
+.tarjeta {
+    width: 100%;
+    height: 350px;
+    margin: 0 auto;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.6s;
+    background: var(--color-principal);
+}
+
+.tarjeta-flip:hover .tarjeta {
+    transform: rotateY(180deg);
+}
+
+.cara {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 10px;
+    overflow: hidden;
+    background-color: var(--color-principal);
+    border: 1px solid var(--color-principal);
+}
+
+.frontal {
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    background: var(--color-principal);
+}
+
+.frontal img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.frontal h3 {
+    position: relative;
+    z-index: 1;
+    font-size: 1.2rem;
+    margin-bottom: 0.25rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.frontal p {
+    position: relative;
+    z-index: 1;
+    font-size: 0.9rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.trasera {
+    transform: rotateY(180deg);
+    background-color: var(--color-principal);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0.5rem;
+    gap: 0.5rem;
+}
+
+.tarjeta h3 {
+    color: var(--color-texto);
+    font-size: 1.2rem;
+    margin-bottom: 0.25rem;
+}
+
+.tarjeta p {
+    color: var(--color-texto);
+    font-size: 0.9rem;
+    line-height: 1.3;
+    margin-bottom: 0.5rem;
+    text-align: center;
+}
+
+/* BARRAS DE HABILIDADES */
+.skill-bars {
+    width: 100%;
+    margin-top: 0.5rem;
+}
+
+.etiqueta {
+    font-size: 0.7rem;
+    color: var(--color-texto);
+    margin-bottom: 0.1rem;
+    text-align: left;
+}
+
+.skill-bar {
+    background-color: var(--color-barra);
+    border-radius: 5px;
+    margin-bottom: 0.2rem;
+    overflow: hidden;
+    height: 6px;
+}
+
+.skill-bar .fill {
+    background-color: var(--color-progreso);
+    height: 6px;
+    width: 0;
+    animation: fillBar 1s forwards;
+}
+
+@keyframes fillBar {
+    from { width: 0; }
+    to { width: var(--bar-width); }
+}
+
+.fill[data-width="95"] { --bar-width: 95%; }
+.fill[data-width="40"] { --bar-width: 40%; }
+.fill[data-width="60"] { --bar-width: 60%; }
+.fill[data-width="80"] { --bar-width: 80%; }
+.fill[data-width="85"] { --bar-width: 85%; }
+.fill[data-width="75"] { --bar-width: 75%; }
+.fill[data-width="70"] { --bar-width: 70%; }
+.fill[data-width="90"] { --bar-width: 90%; }
+.fill[data-width="65"] { --bar-width: 65%; }
+.fill[data-width="15"] { --bar-width: 15%; }
+
+/* CALIFICACIONES */
+.star-rating {
+    margin-top: 1rem;
+    font-size: 1.2rem;
+}
+
+.star {
+    color: var(--color-estrellas);
+}
+
+/* BOTÓN DE MODO OSCURO/CLARO */
+.modo-oscuro-btn {
+    background-color: var(--color-principal);
+    color: var(--color-texto);
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+}
+
+.modo-oscuro-btn:hover {
+    transform: scale(1.1);
+}
+
+/* FORMULARIO DE SUSCRIPCIÓN */
+.suscripcion-form {
+    display: flex;
+    gap: 1rem;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.suscripcion-form input {
+    flex: 1;
+    padding: 0.8rem;
+    border: 1px solid var(--color-principal);
+    border-radius: var(--border-radius);
+    font-size: 1rem;
+    background: var(--color-fondo);
+    color: var(--color-texto);
+}
+
+.suscripcion-form button {
+    padding: 0.8rem 1.5rem;
+    background: var(--color-principal);
+    color: var(--color-texto);
+    border: none;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.suscripcion-form button:hover {
+    background: var(--color-hover);
+}
+
+/* TEXTO DEL FOOTER */
+.footer-box h3 {
+    color: var(--color-principal);
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.footer-box p {
+    color: var(--color-texto);
+    margin-bottom: 1.5rem;
+    text-align: center;
+    line-height: 1.6;
+}
+
+/* FOOTER */
+.footer {
+    background: var(--color-principal);
+    padding: 1.5rem 0.5rem 0.5rem;
+    margin-top: 2rem;
+    color: var(--color-texto);
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-box {
+    text-align: center;
+    padding: 0.3rem;
+}
+
+.footer-box h3 {
+    color: var(--color-texto);
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+}
+
+.footer-box p {
+    color: var(--color-texto);
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+}
+
+/* FORMULARIO DE SUSCRIPCIÓN */
+.suscripcion-form {
+    display: flex;
+    gap: 0.3rem;
+    max-width: 300px;
+    margin: 0 auto;
+}
+
+.suscripcion-form input {
+    flex: 1;
+    padding: 0.5rem;
+    border: 1px solid var(--color-texto);
+    border-radius: var(--border-radius);
+    font-size: 0.8rem;
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--color-texto);
+}
+
+.suscripcion-form button {
+    padding: 0.5rem 0.8rem;
+    background: var(--color-texto);
+    color: var(--color-principal);
+    border: none;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* ICONOS SOCIALES */
+.social-icons {
+    display: flex;
+    gap: 0.5rem;
+    justify-content: center;
+    margin-top: 0.3rem;
+}
+
+.social-link {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.social-icon {
+    width: 18px;
+    height: 18px;
+    object-fit: contain;
+}
+
+/* MAPA */
+.mapa {
+    height: 200px;
+    margin: 0.3rem auto;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+}
+
+/* COPYRIGHT */
+.footer-copyright {
+    text-align: center;
+    padding: 0.3rem 0;
+    background: rgba(0, 0, 0, 0.1);
+    color: var(--color-texto);
+    font-size: 0.65rem;
+    margin-top: 1rem;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .footer {
+        padding: 1rem;
+    }
+    
+    .footer-content {
+        grid-template-columns: 1fr;
+        gap: 0.8rem;
+    }
+    
+    .suscripcion-form {
+        flex-direction: column;
+        max-width: 100%;
+    }
+    
+    .suscripcion-form input {
+        margin-bottom: 0.3rem;
+    }
+    
+    .social-icons {
+        gap: 0.3rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .footer {
+        padding: 0.8rem;
+    }
+    
+    .footer-box h3 {
+        font-size: 1rem;
+    }
+    
+    .social-icons {
+        gap: 0.2rem;
+    }
+}
+
+@media (max-width: 1200px) {
+    .tarjetas-container {
+        gap: 1.5rem;
+    }
+    
+    .tarjeta-flip {
+        width: 280px;
+        height: 380px;
+    }
+}
+
+@media (max-width: 992px) {
+    .tarjetas-container {
+        justify-content: space-around;
+    }
+    
+    .tarjeta-flip {
+        width: 260px;
+        height: 360px;
+    }
+}
+
+@media (max-width: 768px) {
+    .tarjetas-container {
+        justify-content: center;
+    }
+    
+    .tarjeta-flip {
+        width: 240px;
+        height: 340px;
+    }
+}
+
+@media (max-width: 576px) {
+    .tarjetas-container {
+        justify-content: center;
+        gap: 1rem;
+    }
+    
+    .tarjeta-flip {
+        width: 220px;
+        height: 320px;
+    }
+    
+    .cara.trasera h3 {
+        font-size: 1.1rem;
+    }
+    
+    .cara.trasera p {
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .titulo-entrenadores {
+        padding: 3rem 1rem;
+    }
+    
+    .titulo-entrenadores h1 {
+        font-size: 2.5rem;
+    }
+    
+    .titulo-entrenadores p,
+    .descripcion-entrenadores p {
+        font-size: 1rem;
+    }
+    
+    .texto {
+        font-size: 0.9rem;
+    }
+    
+    .entrenadores {
+        padding: 3rem 1rem;
+    }
+    
+    .container {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 1rem;
+    }
+    
+    .tarjeta {
+        height: 300px;
+    }
+    
+    .frontal h3,
+    .trasera h3 {
+        font-size: 1rem;
+    }
+    
+    .frontal p,
+    .trasera p {
+        font-size: 0.8rem;
+    }
+    
+    .etiqueta {
+        font-size: 0.6rem;
+    }
+    
+    .skill-bar {
+        height: 4px;
+    }
+    
+    .modo-oscuro-btn {
+        padding: 0.4rem 0.8rem;
+    }
+    
+    .suscripcion-form {
+        flex-direction: column;
+    }
+    
+    .suscripcion-form input,
+    .suscripcion-form button {
+        width: 100%;
+        padding: 0.8rem;
+    }
+    
+    .footer {
+        padding: 2rem 1rem 1rem;
+    }
+    
+    .footer-content {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .footer-box h3 {
+        font-size: 1.2rem;
+    }
+    
+    .social-icon {
+        width: 28px;
+        height: 28px;
+    }
+    
+    .suscripcion-form {
+        flex-direction: column;
+    }
+    
+    .suscripcion-form input,
+    .suscripcion-form button {
+        width: 100%;
+        padding: 0.8rem;
+    }
+    
+    .mapa {
+        height: 250px;
+    }
+}
+
+@media (max-width: 480px) {
+    .titulo-entrenadores {
+        padding: 2rem 0.5rem;
+    }
+    
+    .titulo-entrenadores h1 {
+        font-size: 2rem;
+    }
+    
+    .titulo-entrenadores p,
+    .descripcion-entrenadores p {
+        font-size: 0.9rem;
+    }
+    
+    .texto {
+        font-size: 0.8rem;
+    }
+    
+    .entrenadores {
+        padding: 2rem 0.5rem;
+    }
+    
+    .container {
+        grid-template-columns: 1fr;
+    }
+    
+    .tarjeta {
+        height: 250px;
+    }
+    
+    .frontal h3,
+    .trasera h3 {
+        font-size: 0.9rem;
+    }
+    
+    .frontal p,
+    .trasera p {
+        font-size: 0.7rem;
+    }
+    
+    .etiqueta {
+        font-size: 0.5rem;
+    }
+    
+    .skill-bar {
+        height: 3px;
+    }
+    
+    .modo-oscuro-btn {
+        padding: 0.3rem 0.6rem;
+    }
+    
+    .suscripcion-form input,
+    .suscripcion-form button {
+        padding: 0.6rem;
+    }
+    
+    .footer {
+        padding: 1.5rem 0.5rem 1rem;
+    }
+    
+    .footer-box h3 {
+        font-size: 1.1rem;
+    }
+    
+    .social-icon {
+        width: 24px;
+        height: 24px;
+    }
+    
+    .suscripcion-form input,
+    .suscripcion-form button {
+        padding: 0.6rem;
+    }
+    
+    .mapa {
+        height: 200px;
+    }
+    
+    .footer-copyright {
+        font-size: 0.7rem;
+        padding: 0.8rem 0;
+    }
+}
+
+/* Galería de imágenes */
+.galeria-imagenes {
+    padding: 2rem;
+    background: var(--color-fondo);
+}
+
+.galeria-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(3, 150px);
+    gap: 10px;
+}
+
+.galeria-item:nth-child(1) {
+    grid-column: 1 / 2;
+    grid-row: 1 / 3;
+}
+
+.galeria-item:nth-child(2) {
+    grid-column: 1 / 2;
+    grid-row: 3 / 4;
+}
+
+.galeria-item:nth-child(3) {
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+}
+
+.galeria-item:nth-child(4) {
+    grid-column: 2 / 3;
+    grid-row: 2 / 4;
+}
+
+.galeria-item:nth-child(5) {
+    grid-column: 3 / 4;
+    grid-row: 1 / 3;
+}
+
+.galeria-item:nth-child(6) {
+    grid-column: 4 / 5;
+    grid-row: 1 / 2;
+}
+
+.galeria-item:nth-child(7) {
+    grid-column: 3 / 4;
+    grid-row: 3 / 4;
+}
+
+.galeria-item:nth-child(8) {
+    grid-column: 4 / 5;
+    grid-row: 2 / 3;
+}
+
+.galeria-item:nth-child(9) {
+    grid-column: 4 / 5;
+    grid-row: 3 / 4;
+}
+
+.galeria-item {
+    border-radius: 8px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.galeria-item:hover {
+    transform: scale(1.02);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive para la galería */
+@media (max-width: 992px) {
+    .galeria-container {
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(4, 120px);
+    }
+    
+    .galeria-item:nth-child(1) {
+        grid-column: 1 / 2;
+        grid-row: 1 / 3;
+    }
+    
+    .galeria-item:nth-child(2) {
+        grid-column: 1 / 2;
+        grid-row: 3 / 4;
+    }
+    
+    .galeria-item:nth-child(3) {
+        grid-column: 2 / 3;
+        grid-row: 1 / 2;
+    }
+    
+    .galeria-item:nth-child(4) {
+        grid-column: 2 / 3;
+        grid-row: 2 / 4;
+    }
+    
+    .galeria-item:nth-child(5) {
+        grid-column: 3 / 4;
+        grid-row: 1 / 3;
+    }
+    
+    .galeria-item:nth-child(6) {
+        grid-column: 3 / 4;
+        grid-row: 3 / 4;
+    }
+    
+    .galeria-item:nth-child(7) {
+        grid-column: 1 / 2;
+        grid-row: 4 / 5;
+    }
+    
+    .galeria-item:nth-child(8) {
+        grid-column: 2 / 3;
+        grid-row: 4 / 5;
+    }
+    
+    .galeria-item:nth-child(9) {
+        grid-column: 3 / 4;
+        grid-row: 4 / 5;
+    }
+}
+
+@media (max-width: 768px) {
+    .galeria-container {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(5, 100px);
+    }
+    
+    .galeria-item:nth-child(1) {
+        grid-column: 1 / 2;
+        grid-row: 1 / 2;
+    }
+    
+    .galeria-item:nth-child(2) {
+        grid-column: 2 / 3;
+        grid-row: 1 / 2;
+    }
+    
+    .galeria-item:nth-child(3) {
+        grid-column: 1 / 3;
+        grid-row: 2 / 3;
+    }
+    
+    .galeria-item:nth-child(4) {
+        grid-column: 1 / 2;
+        grid-row: 3 / 4;
+    }
+    
+    .galeria-item:nth-child(5) {
+        grid-column: 2 / 3;
+        grid-row: 3 / 4;
+    }
+    
+    .galeria-item:nth-child(6) {
+        grid-column: 1 / 3;
+        grid-row: 4 / 5;
+    }
+    
+    .galeria-item:nth-child(7) {
+        grid-column: 1 / 2;
+        grid-row: 5 / 6;
+    }
+    
+    .galeria-item:nth-child(8) {
+        grid-column: 2 / 3;
+        grid-row: 5 / 6;
+    }
+    
+    .galeria-item:nth-child(9) {
+        display: none;
+    }
+}
+
+@media (max-width: 480px) {
+    .galeria-container {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(6, 80px);
+    }
+    
+    .galeria-item:nth-child(1) {
+        grid-column: 1 / 2;
+        grid-row: 1 / 2;
+    }
+    
+    .galeria-item:nth-child(2) {
+        grid-column: 1 / 2;
+        grid-row: 2 / 3;
+    }
+    
+    .galeria-item:nth-child(3) {
+        grid-column: 1 / 2;
+        grid-row: 3 / 4;
+    }
+    
+    .galeria-item:nth-child(4) {
+        grid-column: 1 / 2;
+        grid-row: 4 / 5;
+    }
+    
+    .galeria-item:nth-child(5) {
+        grid-column: 1 / 2;
+        grid-row: 5 / 6;
+    }
+    
+    .galeria-item:nth-child(6) {
+        grid-column: 1 / 2;
+        grid-row: 6 / 7;
+    }
+    
+    .galeria-item:nth-child(7),
+    .galeria-item:nth-child(8),
+    .galeria-item:nth-child(9) {
+        display: none;
+    }
+}
+
+.navbar {
+    z-index: 1002;
+}
+
+@media (max-width: 768px) {
+    .menu {
+        z-index: 1001;
+    }
+    
+    .dropdown.active .submenu {
+        z-index: 1003;
+    }
+}

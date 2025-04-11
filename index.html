@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gimnasio Hybrid Gym</title>
+    <link rel="stylesheet" href="css/index_style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+</head>
+
+<body>
+    <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
+    <div class="main-content">
+        <header>
+            <nav class="navbar" role="navigation" aria-label="Menú principal">
+                <div class="logo">Hybrid Gym</div>
+                <div class="menu-toggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="main-menu">☰</div>
+                <ul class="menu" id="main-menu">
+                    <li><a href="index.html" aria-current="page">Inicio</a></li>
+                    <li class="dropdown">
+                        <a href="#" aria-haspopup="true" aria-expanded="false">Clases</a>
+                        <ul class="submenu">
+                            <li><a href="clases.html#musculacion">Musculación</a></li>
+                            <li><a href="clases.html#crossfit">CrossFit</a></li>
+                            <li><a href="clases.html#yoga">Yoga</a></li>
+                            <li><a href="clases.html#spinning">Spinning</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="entrenadores.html">Entrenadores</a></li>
+                    <li><a href="precios.html">Precios</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><button class="modo-oscuro-btn" aria-label="Cambiar entre modo oscuro y claro"><i
+                                class="fas fa-moon"></i></button></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main id="main-content">
+            <section class="hero" aria-label="Banner principal">
+                <video autoplay muted loop id="heroVideo" aria-hidden="true">
+                    <source src="media/JesseJamesWest.mp4" type="video/mp4">
+                </video>
+                <div class="hero-overlay">
+                    <h1 class="hero-title">¡Transforma tu cuerpo, transforma tu vida!</h1>
+                </div>
+            </section>
+
+            <section class="clases-destacadas" aria-labelledby="clases-destacadas-titulo">
+                <h2 id="clases-destacadas-titulo">Estas son las clases más solicitadas</h2>
+                <div class="cards">
+                    <div class="card">
+                        <img src="img/musculacion1.png" alt="Persona levantando pesas en entrenamiento de musculación"
+                            class="card-image">
+                        <div class="card-content">
+                            <h3>Musculación</h3>
+                            <p>Entrenamientos a tu medida para ganar fuerza y masa muscular.</p>
+                            <a href="clases.html#musculacion" class="boton">Ver más</a>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="img/yoga1.jpg" alt="Persona realizando una postura de yoga" class="card-image">
+                        <div class="card-content">
+                            <h3>Yoga</h3>
+                            <p>Equilibrá cuerpo y mente con sesiones relajantes.</p>
+                            <a href="clases.html#yoga" class="boton">Ver más</a>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="img/spinning1.jpg" alt="Clase de spinning con varias bicicletas estáticas"
+                            class="card-image">
+                        <div class="card-content">
+                            <h3>Spinning</h3>
+                            <p>Cardio intenso con música motivadora.</p>
+                            <a href="clases.html#spinning" class="boton">Ver más</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="contador" aria-labelledby="contador-title">
+                <div class="contador-content">
+                    <div class="numero" aria-live="polite">500</div>
+                    <p id="contador-title">Miembros actuales</p>
+                </div>
+            </section>
+
+            <section class="testimonios" aria-labelledby="testimonios-titulo">
+                <h2 id="testimonios-titulo">Testimonios</h2>
+                <div class="testimonios-carousel">
+                    <input type="radio" name="carousel" id="carousel-1" checked>
+                    <input type="radio" name="carousel" id="carousel-2">
+                    <input type="radio" name="carousel" id="carousel-3">
+                    <input type="radio" name="carousel" id="carousel-4">
+                    <input type="radio" name="carousel" id="carousel-5">
+                    <input type="radio" name="carousel" id="carousel-6">
+
+                    <div class="testimonios-wrapper">
+                        <div class="testimonio" id="testimonio-1">
+                            <p>"Spinning con buena música me motiva."<br><span class="author">- Carla R.</span></p>
+                        </div>
+                        <div class="testimonio" id="testimonio-2">
+                            <p>"Plan personalizado = resultados reales."<br><span class="author">- Javier M.</span></p>
+                        </div>
+                        <div class="testimonio" id="testimonio-3">
+                            <p>"CrossFit me hizo más fuerte. 💪"<br><span class="author">- Sofía L.</span></p>
+                        </div>
+                        <div class="testimonio" id="testimonio-4">
+                            <p>"El yoga es mi momento zen semanal."<br><span class="author">- Martín G.</span></p>
+                        </div>
+                        <div class="testimonio" id="testimonio-5">
+                            <p>"6 meses, cambio físico total."<br><span class="author">- Elena P.</span></p>
+                        </div>
+                        <div class="testimonio" id="testimonio-6">
+                            <p>"Spinning + CrossFit = 💥 variedad y desafío."<br><span class="author">- David S.</span></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-navigation">
+                    <label for="carousel-1" class="dot"></label>
+                    <label for="carousel-2" class="dot"></label>
+                    <label for="carousel-3" class="dot"></label>
+                    <label for="carousel-4" class="dot"></label>
+                    <label for="carousel-5" class="dot"></label>
+                    <label for="carousel-6" class="dot"></label>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <div class="footer-separator"></div>
+
+    <!-- FOOTER -->
+    <footer class="footer" role="contentinfo">
+        <div class="footer-content">
+            <div class="footer-box">
+                <h3>Redes Sociales</h3>
+                <p>Síguenos en nuestras redes sociales para estar al día con las últimas novedades.</p>
+                <div class="social-icons">
+                    <a href="#" class="social-link facebook" aria-label="Facebook">
+                        <img src="img/facebooklogo.png" alt="Logo de Facebook" class="social-icon">
+                    </a>
+                    <a href="#" class="social-link instagram" aria-label="Instagram">
+                        <img src="img/instagramlogo.jpg" alt="Logo de Instagram" class="social-icon">
+                    </a>
+                    <a href="#" class="social-link twitter" aria-label="YouTube">
+                        <img src="img/youtubelogo.png" alt="Logo de YouTube" class="social-icon">
+                    </a>
+                </div>
+            </div>
+            <div class="footer-box">
+                <h3>Suscríbete</h3>
+                <p>Recibe nuestras novedades y ofertas especiales.</p>
+                <form class="suscripcion-form" aria-label="Formulario de suscripción">
+                    <input type="email" placeholder="Tu correo electrónico" required aria-label="Correo electrónico">
+                    <button type="submit">Suscribirse</button>
+                </form>
+            </div>
+            <div class="footer-box">
+                <h3>Ubicación</h3>
+                <p>Visítanos en nuestro gimnasio.</p>
+                <div class="mapa">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3902.806145026034!2d-58.3816!3d-34.6037!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x93e7b3b3b3b3b3b3%3A0x123456789abcdef0!2sGymFit!5e0!3m2!1ses!2sbo!4v1681185227000!5m2!1ses!2sbo"
+                        width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade" title="Mapa de ubicación de Hybrid Gym"
+                        aria-label="Mapa de ubicación de nuestro gimnasio">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+        <div class="footer-copyright">
+            <p>&copy; 2025 GymFit. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- SCRIPTS -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY"></script>
+    <script src="js/script.js"></script>
+</body>
+
+</html>

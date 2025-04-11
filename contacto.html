@@ -1,0 +1,150 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto - Hybrid Gym</title>
+    <link rel="stylesheet" href="css/index_style.css">
+    <link rel="stylesheet" href="css/contact_style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+
+<header>
+    <nav class="navbar" role="navigation" aria-label="Menú principal">
+        <div class="logo">Hybrid Gym</div>
+        <div class="menu-toggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="main-menu">☰</div>
+        <ul class="menu" id="main-menu">
+            <li><a href="index.html" aria-current="page">Inicio</a></li>
+            <li class="dropdown">
+                <a href="#" aria-haspopup="true" aria-expanded="false">Clases</a>
+                <ul class="submenu">
+                    <li><a href="clases.html#musculacion">Musculación</a></li>
+                    <li><a href="clases.html#crossfit">CrossFit</a></li>
+                    <li><a href="clases.html#yoga">Yoga</a></li>
+                    <li><a href="clases.html#spinning">Spinning</a></li>
+                </ul>
+            </li>
+            <li><a href="entrenadores.html">Entrenadores</a></li>
+            <li><a href="precios.html">Precios</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><button class="modo-oscuro-btn" aria-label="Cambiar entre modo oscuro y claro"><i class="fas fa-moon"></i></button></li>
+        </ul>
+    </nav>
+</header>
+
+<section class="contact-form">
+    <h2>Formulario de Contacto</h2>
+    <form id="contactForm">
+        <div class="form-group">
+            <label for="name">Nombre:</label>
+            <input type="text" id="name" name="name" required>
+            <div class="spinner"></div>
+        </div>
+        <div class="form-group">
+            <label for="email">Correo Electrónico:</label>
+            <input type="email" id="email" name="email" required>
+            <div class="spinner"></div>
+        </div>
+        <div class="form-group">
+            <label for="message">Mensaje:</label>
+            <textarea id="message" name="message" required></textarea>
+            <div class="spinner"></div>
+        </div>
+        <button type="submit" class="submit-btn">Enviar</button>
+    </form>
+</section>
+
+<!-- Modal de Confirmación -->
+<div id="confirmationModal" class="modal">
+    <div class="modal-content">
+        <span class="close-btn">&times;</span>
+        <div class="modal-icon">✓</div>
+        <p>¡Gracias por contactarnos! Nos pondremos en contacto contigo pronto.</p>
+    </div>
+</div>
+
+<!-- SEPARADOR -->
+<div class="footer-separator"></div>
+
+<!-- Footer -->
+<footer class="footer">
+    <div class="footer-content">
+        <!-- Redes sociales -->
+        <div class="footer-box">
+            <h3>Seguinos</h3>
+            <div class="social-icons">
+                <a href="#" class="social-link facebook">
+                    <img src="img/facebooklogo.png" alt="Facebook" class="social-icon">
+                </a>
+                <a href="#" class="social-link instagram">
+                    <img src="img/instagramlogo.jpg" alt="Instagram" class="social-icon">
+                </a>
+                <a href="#" class="social-link youtube">
+                    <img src="img/youtubelogo.png" alt="YouTube" class="social-icon">
+                </a>
+            </div>
+        </div>
+        <!-- Mapa -->
+        <div class="footer-box">
+            <h3>Nos encontramos en</h3>
+            <div class="mapa">
+                <iframe
+                    src="https://www.openstreetmap.org/export/embed.html?bbox=-65.305%2C-24.185%2C-65.295%2C-24.175&layer=mapnik"
+                    frameborder="0" loading="lazy"></iframe>
+            </div>
+        </div>
+    </div>
+    <!-- Créditos -->
+    <div class="footer-copyright">
+        <p>&copy; 2025 Hybrid Gym. Todos los derechos reservados.</p>
+        <p>Desarrollado con 💪 por Juan Garzón</p>
+    </div>
+</footer>
+
+<script>
+    // Manejo del formulario de contacto
+    document.getElementById('contactForm').addEventListener('submit', function (event) {
+        event.preventDefault();
+
+        // Deshabilitar el formulario
+        this.classList.add('loading');
+
+        // Mostrar spinner en el botón
+        document.querySelector('.submit-btn').classList.add('loading');
+
+        // Simular envío de datos
+        setTimeout(() => {
+            // Restablecer formulario
+            this.reset();
+            this.classList.remove('loading');
+
+            // Mostrar modal de confirmación
+            const modal = document.getElementById('confirmationModal');
+            modal.style.display = 'block';
+            modal.classList.add('show');
+
+            // Restablecer botón
+            document.querySelector('.submit-btn').classList.remove('loading');
+        }, 2000);
+    });
+
+    // Cerrar modal al hacer clic en el botón de cerrar
+    document.querySelector('.close-btn').addEventListener('click', function () {
+        const modal = document.getElementById('confirmationModal');
+        modal.classList.remove('show');
+        setTimeout(() => {
+            modal.style.display = 'none';
+        }, 300);
+    });
+
+    // Cerrar modal al hacer clic fuera del contenido
+    document.getElementById('confirmationModal').addEventListener('click', function (event) {
+        if (event.target === this) {
+            this.classList.remove('show');
+            setTimeout(() => {
+                this.style.display = 'none';
+            }, 300);
+        }
+    });
+</script>
+
+<script src="js/script.js" defer></script>
